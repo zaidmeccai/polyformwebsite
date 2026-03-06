@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polyform — AI T-Shirt Design</title>
+  <meta name="description" content="Design unique, AI-powered custom T-shirts in seconds. Just describe your idea and Polyform brings it to life." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#" class="nav__logo">
+        <span class="logo-mark"></span>
+        Polyform
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#how-it-works">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#pricing" class="btn btn--sm btn--primary nav__cta">Get started</a>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero__bg-blobs">
+      <div class="blob blob--1"></div>
+      <div class="blob blob--2"></div>
+      <div class="blob blob--3"></div>
+    </div>
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <span class="badge">✦ Powered by AI</span>
+        <h1 class="hero__headline">
+          Design your dream<br />
+          <span class="gradient-text">T-shirt in seconds</span>
+        </h1>
+        <p class="hero__sub">
+          Just describe your idea — Polyform's AI turns it into a stunning,
+          print-ready design. No design skills needed.
+        </p>
+        <div class="hero__actions">
+          <a href="#pricing" class="btn btn--primary btn--lg">Start designing free</a>
+          <a href="#how-it-works" class="btn btn--ghost btn--lg">See how it works</a>
+        </div>
+        <p class="hero__trust">
+          <span class="trust-dot"></span>
+          Trusted by 500+ customers in India
+        </p>
+      </div>
+      <div class="hero__visual">
+        <div class="tshirt-card">
+          <div class="tshirt-canvas">
+            <svg class="tshirt-svg" viewBox="0 0 260 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M80 30 L30 80 L60 95 L50 280 L210 280 L200 95 L230 80 L180 30 Q155 50 130 50 Q105 50 80 30Z"
+                fill="#1a1a2e" stroke="#333" stroke-width="2"/>
+              <!-- Collar -->
+              <path d="M80 30 Q105 70 130 65 Q155 70 180 30" fill="#111" stroke="#333" stroke-width="1.5"/>
+            </svg>
+            <div class="tshirt-design">
+              <div class="ai-design-preview">
+                <div class="design-circle"></div>
+                <div class="design-lines">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="prompt-bubble">
+            <span class="prompt-label">Your prompt</span>
+            <p class="prompt-text">"Cyberpunk tiger with neon city skyline"</p>
+            <div class="prompt-loader">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll-hint">
+      <span>Scroll to explore</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ── LOGOS / SOCIAL PROOF ── -->
+  <section class="social-proof">
+    <div class="container">
+      <p class="social-proof__label">Featured in</p>
+      <div class="social-proof__logos">
+        <span class="logo-pill">YourStory</span>
+        <span class="logo-pill">Inc42</span>
+        <span class="logo-pill">StartupIndia</span>
+        <span class="logo-pill">ProductHunt</span>
+        <span class="logo-pill">TechCrunch India</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW IT WORKS ── -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section__header">
+        <span class="badge">Simple process</span>
+        <h2>From idea to doorstep<br /><span class="gradient-text">in 3 easy steps</span></h2>
+        <p>No design degree. No complicated software. Just your imagination.</p>
+      </div>
+      <div class="steps">
+        <div class="step" data-step="01">
+          <div class="step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+            </svg>
+          </div>
+          <h3>Describe your idea</h3>
+          <p>Type a prompt like <em>"Space wolf wearing sunglasses"</em> or upload a reference image. Be as creative as you want.</p>
+        </div>
+        <div class="step__arrow">→</div>
+        <div class="step" data-step="02">
+          <div class="step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h4"/>
+            </svg>
+          </div>
+          <h3>AI generates designs</h3>
+          <p>Our model creates multiple high-resolution, print-ready designs in seconds. Pick your favourite or remix it further.</p>
+        </div>
+        <div class="step__arrow">→</div>
+        <div class="step" data-step="03">
+          <div class="step__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+          <h3>We print & deliver</h3>
+          <p>Choose your size and colour. We print on premium fabric and ship right to your door anywhere in India.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURES ── -->
+  <section class="section section--alt" id="features">
+    <div class="container">
+      <div class="section__header">
+        <span class="badge">Why Polyform</span>
+        <h2>Everything you need for<br /><span class="gradient-text">perfect custom tees</span></h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card feature-card--highlight">
+          <div class="feature-card__icon">🎨</div>
+          <h3>AI-Powered Design</h3>
+          <p>State-of-the-art image generation trained on millions of apparel designs. Your vision, perfected.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">⚡</div>
+          <h3>Instant Results</h3>
+          <p>Get 4 unique design variations in under 10 seconds. Iterate as many times as you like for free.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">🖨️</div>
+          <h3>Print-Ready Quality</h3>
+          <p>All designs are exported at 300 DPI, colour-corrected, and optimised for direct-to-garment printing.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">👕</div>
+          <h3>Premium Fabric</h3>
+          <p>100% ring-spun cotton, 180 GSM. Soft, durable and wash-resistant. Sizes XS–5XL in 12 colours.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">🚚</div>
+          <h3>Pan-India Delivery</h3>
+          <p>Fast shipping to every pin code in India. Mysuru orders delivered same day. Track in real time.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">🔒</div>
+          <h3>Satisfaction Guarantee</h3>
+          <p>Not happy with the print? We reprint or refund — no questions asked, within 7 days of delivery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GALLERY ── -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section__header">
+        <span class="badge">Inspiration</span>
+        <h2>Designs crafted with<br /><span class="gradient-text">Polyform AI</span></h2>
+        <p>A small sample of what our customers have created.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item" style="--hue:260">
+          <div class="gallery-item__preview">
+            <div class="design-abstract" style="--c1:#a855f7;--c2:#6366f1"></div>
+          </div>
+          <span class="gallery-item__tag">Abstract Art</span>
+        </div>
+        <div class="gallery-item gallery-item--tall" style="--hue:320">
+          <div class="gallery-item__preview">
+            <div class="design-abstract" style="--c1:#ec4899;--c2:#f97316"></div>
+          </div>
+          <span class="gallery-item__tag">Typography</span>
+        </div>
+        <div class="gallery-item" style="--hue:200">
+          <div class="gallery-item__preview">
+            <div class="design-abstract" style="--c1:#06b6d4;--c2:#3b82f6"></div>
+          </div>
+          <span class="gallery-item__tag">Geometric</span>
+        </div>
+        <div class="gallery-item gallery-item--wide" style="--hue:140">
+          <div class="gallery-item__preview">
+            <div class="design-abstract" style="--c1:#10b981;--c2:#06b6d4"></div>
+          </div>
+          <span class="gallery-item__tag">Nature / Mandala</span>
+        </div>
+        <div class="gallery-item" style="--hue:30">
+          <div class="gallery-item__preview">
+            <div class="design-abstract" style="--c1:#f97316;--c2:#eab308"></div>
+          </div>
+          <span class="gallery-item__tag">Anime / Pop</span>
+        </div>
+        <div class="gallery-item" style="--hue:350">
+          <div class="gallery-item__preview">
+            <div class="design-abstract" style="--c1:#ef4444;--c2:#a855f7"></div>
+          </div>
+          <span class="gallery-item__tag">Retro / Vintage</span>
+        </div>
+      </div>
+      <div class="gallery-cta">
+        <a href="#pricing" class="btn btn--primary">Create yours now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIALS ── -->
+  <section class="section section--alt" id="testimonials">
+    <div class="container">
+      <div class="section__header">
+        <span class="badge">Customer love</span>
+        <h2>People are obsessed<br /><span class="gradient-text">with Polyform</span></h2>
+      </div>
+      <div class="testimonials">
+        <div class="testimonial">
+          <div class="testimonial__stars">★★★★★</div>
+          <p>"I described a jungle-themed design for my college fest T-shirts and got an incredible result in seconds. Everyone thought I hired a professional designer!"</p>
+          <div class="testimonial__author">
+            <div class="avatar">AR</div>
+            <div>
+              <strong>Aditya R.</strong>
+              <span>College student, Bengaluru</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial testimonial--featured">
+          <div class="testimonial__stars">★★★★★</div>
+          <p>"We ordered 200 custom shirts for our startup's team day. Polyform's AI nailed our brand aesthetic perfectly, and delivery was surprisingly fast!"</p>
+          <div class="testimonial__author">
+            <div class="avatar">PS</div>
+            <div>
+              <strong>Priya S.</strong>
+              <span>Founder, Bengaluru Startup</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial__stars">★★★★★</div>
+          <p>"Ordered a gift for my brother who loves cyberpunk art. The AI-generated design blew us both away — feels like it was made by a pro illustrator."</p>
+          <div class="testimonial__author">
+            <div class="avatar">KM</div>
+            <div>
+              <strong>Kiran M.</strong>
+              <span>Software engineer, Mysuru</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRICING ── -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section__header">
+        <span class="badge">Pricing</span>
+        <h2>Simple, transparent<br /><span class="gradient-text">pricing</span></h2>
+        <p>No hidden fees. Design for free, pay only when you order.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-card__tier">Starter</div>
+          <div class="pricing-card__price">
+            <span class="price-currency">₹</span>
+            <span class="price-amount">499</span>
+            <span class="price-per">/ shirt</span>
+          </div>
+          <p class="pricing-card__desc">Perfect for personal use and one-off gifts.</p>
+          <ul class="pricing-card__features">
+            <li>✓ 4 AI design variations</li>
+            <li>✓ 1 T-shirt printed</li>
+            <li>✓ Premium 180 GSM cotton</li>
+            <li>✓ All sizes available</li>
+            <li>✓ Delivery across India</li>
+          </ul>
+          <a href="#contact" class="btn btn--outline btn--full">Order now</a>
+        </div>
+        <div class="pricing-card pricing-card--popular">
+          <div class="pricing-card__badge">Most Popular</div>
+          <div class="pricing-card__tier">Creator</div>
+          <div class="pricing-card__price">
+            <span class="price-currency">₹</span>
+            <span class="price-amount">399</span>
+            <span class="price-per">/ shirt</span>
+          </div>
+          <p class="pricing-card__desc">Best for groups, events, and small businesses.</p>
+          <ul class="pricing-card__features">
+            <li>✓ Unlimited AI iterations</li>
+            <li>✓ 10–49 shirts</li>
+            <li>✓ Premium 180 GSM cotton</li>
+            <li>✓ All sizes & 12 colours</li>
+            <li>✓ Priority delivery</li>
+            <li>✓ Free design consultation</li>
+          </ul>
+          <a href="#contact" class="btn btn--primary btn--full">Order now</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-card__tier">Bulk</div>
+          <div class="pricing-card__price">
+            <span class="price-currency">₹</span>
+            <span class="price-amount">299</span>
+            <span class="price-per">/ shirt</span>
+          </div>
+          <p class="pricing-card__desc">Ideal for corporates, merchandise stores, and events.</p>
+          <ul class="pricing-card__features">
+            <li>✓ Unlimited AI iterations</li>
+            <li>✓ 50+ shirts</li>
+            <li>✓ Multiple design options</li>
+            <li>✓ Custom packaging</li>
+            <li>✓ Dedicated account manager</li>
+            <li>✓ Same-day dispatch (Mysuru)</li>
+          </ul>
+          <a href="#contact" class="btn btn--outline btn--full">Get a quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="section section--alt" id="faq">
+    <div class="container container--narrow">
+      <div class="section__header">
+        <span class="badge">FAQ</span>
+        <h2>Common <span class="gradient-text">questions</span></h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>How does the AI design process work?</summary>
+          <p>You type a text prompt describing your design idea. Our AI model generates 4 unique design options in seconds. You can pick one, request variations, or tweak the prompt until you're happy — then place your order.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What is the print quality like?</summary>
+          <p>We use direct-to-garment (DTG) printing on premium 180 GSM ring-spun cotton. Designs are vibrant, durable, and fade-resistant for up to 50 washes. We also offer screen printing for bulk orders of 50+ shirts.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How long does delivery take?</summary>
+          <p>Mysuru orders: same-day or next-day delivery. Bengaluru: 1–2 days. Rest of India: 3–7 business days. All orders come with a tracking link.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I order for a corporate event or college fest?</summary>
+          <p>Absolutely! We specialise in bulk orders for events, startups, colleges, and brands. Contact us for custom quotes, bulk pricing, and dedicated support.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What if I'm not happy with my order?</summary>
+          <p>We offer a 7-day satisfaction guarantee. If the print quality doesn't match the design preview, we'll reprint it or issue a full refund — no hassle.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT / CTA ── -->
+  <section class="section cta-section" id="contact">
+    <div class="container container--narrow">
+      <div class="cta-card">
+        <span class="badge">Get in touch</span>
+        <h2>Ready to create<br /><span class="gradient-text">something epic?</span></h2>
+        <p>Talk to us about your order, a bulk quote, or just say hi.</p>
+        <div class="contact-options">
+          <a href="tel:08073051632" class="contact-option">
+            <span class="contact-option__icon">📞</span>
+            <div>
+              <strong>Call us</strong>
+              <span>080 7305 1632</span>
+            </div>
+          </a>
+          <a href="https://wa.me/918073051632" class="contact-option" target="_blank" rel="noopener">
+            <span class="contact-option__icon">💬</span>
+            <div>
+              <strong>WhatsApp</strong>
+              <span>Chat with us now</span>
+            </div>
+          </a>
+          <div class="contact-option">
+            <span class="contact-option__icon">📍</span>
+            <div>
+              <strong>Visit us</strong>
+              <span>Bangalore–Mysore Rd, Mysuru 570015</span>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="tel" name="phone" placeholder="Phone / WhatsApp" required />
+          </div>
+          <textarea name="message" rows="3" placeholder="Tell us about your order — quantity, design idea, event date…"></textarea>
+          <button type="submit" class="btn btn--primary btn--full">Send message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#" class="nav__logo">
+          <span class="logo-mark"></span>
+          Polyform
+        </a>
+        <p>AI-powered custom T-shirt design and printing. Based in Mysuru, Karnataka.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Twitter / X">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__links">
+        <div>
+          <h4>Product</h4>
+          <a href="#how-it-works">How it works</a>
+          <a href="#features">Features</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#pricing">Pricing</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+          <a href="#">Privacy policy</a>
+          <a href="#">Terms of service</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2025 Polyform. All rights reserved. Made with ♥ in Mysuru, India.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
