@@ -158,9 +158,7 @@ p  { color: var(--clr-muted); line-height: 1.7; }
   letter-spacing: -0.02em;
 }
 .logo-mark {
-  width: 28px; height: 28px;
-  border-radius: 8px;
-  background: var(--gradient);
+  width: 30px; height: 30px;
   flex-shrink: 0;
 }
 .nav__links {

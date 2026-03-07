@@ -16,7 +16,28 @@
   <header class="nav" id="nav">
     <div class="container nav__inner">
       <a href="#" class="nav__logo">
-        <span class="logo-mark"></span>
+        <svg class="logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="lgTop" x1="14" y1="2" x2="14" y2="14" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#c4b5fd"/>
+              <stop offset="100%" stop-color="#a78bfa"/>
+            </linearGradient>
+            <linearGradient id="lgRight" x1="26" y1="8" x2="14" y2="26" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#db2777"/>
+              <stop offset="100%" stop-color="#f97316"/>
+            </linearGradient>
+            <linearGradient id="lgLeft" x1="2" y1="8" x2="14" y2="26" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#7c3aed"/>
+              <stop offset="100%" stop-color="#9b4de8"/>
+            </linearGradient>
+          </defs>
+          <!-- Top face -->
+          <polygon points="14,2 26,8 14,14 2,8" fill="url(#lgTop)"/>
+          <!-- Right face -->
+          <polygon points="26,8 26,20 14,26 14,14" fill="url(#lgRight)"/>
+          <!-- Left face -->
+          <polygon points="2,8 14,14 14,26 2,20" fill="url(#lgLeft)"/>
+        </svg>
         Polyform
       </a>
       <nav class="nav__links" id="navLinks">
@@ -299,7 +320,11 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <a href="#" class="nav__logo">
-          <span class="logo-mark"></span>
+          <svg class="logo-mark" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <polygon points="14,2 26,8 14,14 2,8" fill="url(#lgTop)"/>
+            <polygon points="26,8 26,20 14,26 14,14" fill="url(#lgRight)"/>
+            <polygon points="2,8 14,14 14,26 2,20" fill="url(#lgLeft)"/>
+          </svg>
           Polyform
         </a>
         <p>AI-powered custom T-shirt design and printing. Based in Mysuru, Karnataka.</p>
