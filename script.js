@@ -46,17 +46,71 @@ document.querySelectorAll(
   observer.observe(el);
 });
 
-// ── Typing animation for prompt bubble ────────
+// ── Hero: live generation animation ──────────
 const prompts = [
   '"Cyberpunk tiger with neon city skyline"',
-  '"Astronaut surfing on Saturn's rings"',
+  '"Astronaut surfing on Saturn\'s rings"',
   '"Vintage mandala with lotus flowers"',
   '"Retro 80s synthwave mountain sunset"',
   '"Minimalist wolf moon geometric"',
 ];
 
 let promptIndex = 0;
-const promptTextEl = document.querySelector('.prompt-text');
+
+const promptTextEl  = document.querySelector('.prompt-text');
+const genOverlay    = document.getElementById('genOverlay');
+const genPctEl      = document.getElementById('genPct');
+const statusPill    = document.getElementById('statusPill');
+const statusDot     = document.getElementById('statusDot');
+const statusTextEl  = document.getElementById('statusText');
+const promptLoader  = document.getElementById('promptLoader');
+const promptDone    = document.getElementById('promptDone');
+
+function setStatus(state) {
+  if (!statusDot) return;
+  statusDot.className = 'status-dot';
+  if (state === 'generating') {
+    statusDot.classList.add('generating');
+    statusTextEl.textContent = 'Generating';
+    promptLoader.style.display = 'flex';
+    promptDone.style.display = 'none';
+  } else if (state === 'done') {
+    statusDot.classList.add('done');
+    statusTextEl.textContent = 'Done';
+    promptLoader.style.display = 'none';
+    promptDone.style.display = 'block';
+  } else {
+    statusTextEl.textContent = 'Typing';
+    promptLoader.style.display = 'flex';
+    promptDone.style.display = 'none';
+  }
+}
+
+function switchDesign(index) {
+  document.querySelectorAll('.design-slide').forEach((el, i) => {
+    el.classList.toggle('active', i === index);
+  });
+}
+
+function runGeneration(onDone) {
+  genOverlay.classList.add('visible');
+  let pct = 0;
+  genPctEl.textContent = '0%';
+  const tick = setInterval(() => {
+    pct += Math.random() * 9 + 3;
+    if (pct >= 100) {
+      pct = 100;
+      clearInterval(tick);
+      genPctEl.textContent = '100%';
+      setTimeout(() => {
+        genOverlay.classList.remove('visible');
+        if (onDone) onDone();
+      }, 350);
+    } else {
+      genPctEl.textContent = Math.floor(pct) + '%';
+    }
+  }, 55);
+}
 
 function typePrompt(text, el, onDone) {
   el.textContent = '';
@@ -66,19 +120,29 @@ function typePrompt(text, el, onDone) {
     i++;
     if (i >= text.length) {
       clearInterval(interval);
-      if (onDone) setTimeout(onDone, 2400);
+      if (onDone) onDone();
     }
-  }, 36);
+  }, 38);
 }
 
 function cyclePrompts() {
   promptIndex = (promptIndex + 1) % prompts.length;
-  typePrompt(prompts[promptIndex], promptTextEl, cyclePrompts);
+  setStatus('typing');
+  typePrompt(prompts[promptIndex], promptTextEl, () => {
+    setStatus('generating');
+    runGeneration(() => {
+      switchDesign(promptIndex);
+      setStatus('done');
+      setTimeout(cyclePrompts, 2600);
+    });
+  });
 }
 
 if (promptTextEl) {
-  // Start cycling after 3s
-  setTimeout(() => typePrompt(prompts[0], promptTextEl, cyclePrompts), 3000);
+  // Initial state: design 0 already visible, show as "done"
+  setStatus('done');
+  // Start first cycle after 3.5s
+  setTimeout(cyclePrompts, 3500);
 }
 
 // ── Contact form handler ───────────────────────

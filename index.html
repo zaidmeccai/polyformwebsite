@@ -61,27 +61,66 @@
       </div>
       <div class="hero__visual">
         <div class="tshirt-card">
-          <div class="tshirt-canvas">
-            <svg class="tshirt-svg" viewBox="0 0 260 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M80 30 L30 80 L60 95 L50 280 L210 280 L200 95 L230 80 L180 30 Q155 50 130 50 Q105 50 80 30Z"
-                fill="#1a1a2e" stroke="#333" stroke-width="2"/>
-              <!-- Collar -->
-              <path d="M80 30 Q105 70 130 65 Q155 70 180 30" fill="#111" stroke="#333" stroke-width="1.5"/>
-            </svg>
-            <div class="tshirt-design">
-              <div class="ai-design-preview">
-                <div class="design-circle"></div>
-                <div class="design-lines">
-                  <span></span><span></span><span></span>
+          <!-- Window-style top bar -->
+          <div class="card-bar">
+            <span class="card-dot cd--red"></span>
+            <span class="card-dot cd--yellow"></span>
+            <span class="card-dot cd--green"></span>
+            <span class="card-bar__title">polyform studio</span>
+          </div>
+
+          <!-- T-shirt + live design -->
+          <div class="tshirt-scene">
+            <div class="tshirt-wrap">
+              <svg class="tshirt-svg" viewBox="0 0 260 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#1e1b4b"/>
+                    <stop offset="100%" stop-color="#0f0d1f"/>
+                  </linearGradient>
+                </defs>
+                <!-- Shirt body -->
+                <path d="M80 30 L30 80 L60 95 L50 280 L210 280 L200 95 L230 80 L180 30 Q155 50 130 50 Q105 50 80 30Z"
+                  fill="url(#sg)" stroke="rgba(255,255,255,0.07)" stroke-width="1.5"/>
+                <!-- Left sleeve shadow -->
+                <path d="M80 30 L30 80 L60 95 L68 280 L50 280 L50 95 L30 80 L80 30Z" fill="rgba(0,0,0,0.2)"/>
+                <!-- Right sleeve shadow -->
+                <path d="M180 30 L230 80 L200 95 L192 280 L210 280 L210 95 L230 80 L180 30Z" fill="rgba(0,0,0,0.12)"/>
+                <!-- Collar -->
+                <path d="M80 30 Q105 70 130 65 Q155 70 180 30" fill="#0f0d1f" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+              </svg>
+
+              <!-- Design print area, positioned over shirt chest -->
+              <div class="print-area">
+                <div class="design-stage" id="designStage">
+                  <div class="design-slide active"><div class="ds ds--cyber"></div></div>
+                  <div class="design-slide"><div class="ds ds--cosmic"></div></div>
+                  <div class="design-slide"><div class="ds ds--mandala"></div></div>
+                  <div class="design-slide"><div class="ds ds--synthwave"></div></div>
+                  <div class="design-slide"><div class="ds ds--wolf"></div></div>
+                </div>
+                <!-- Generation overlay: scan + percentage -->
+                <div class="gen-overlay" id="genOverlay">
+                  <div class="gen-scan"></div>
+                  <span class="gen-pct" id="genPct">0%</span>
                 </div>
               </div>
             </div>
           </div>
-          <div class="prompt-bubble">
-            <span class="prompt-label">Your prompt</span>
+
+          <!-- Prompt panel -->
+          <div class="prompt-panel">
+            <div class="prompt-panel__head">
+              <span class="prompt-label">Your prompt</span>
+              <span class="status-pill" id="statusPill">
+                <span class="status-dot" id="statusDot"></span>
+                <span id="statusText">Generating</span>
+              </span>
+            </div>
             <p class="prompt-text">"Cyberpunk tiger with neon city skyline"</p>
-            <div class="prompt-loader">
-              <span></span><span></span><span></span>
+            <div class="prompt-panel__foot">
+              <div class="prompt-loader" id="promptLoader"><span></span><span></span><span></span></div>
+              <span class="prompt-done" id="promptDone">✓ Design ready</span>
             </div>
           </div>
         </div>
