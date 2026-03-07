@@ -321,13 +321,13 @@ p  { color: var(--clr-muted); line-height: 1.7; }
 }
 
 /* Print area — percentages of SVG viewBox 260×300
-   Design rect: x≈85–175 (90px), y≈98–215 (117px) */
+   Design rect: x≈85–175 (90px), y≈118–248 (130px) */
 .print-area {
   position: absolute;
   left:   32.7%;
-  top:    32.7%;
+  top:    39.3%;
   width:  34.6%;
-  height: 39%;
+  height: 43.3%;
   border-radius: 3px;
   overflow: hidden;
 }

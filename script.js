@@ -48,11 +48,11 @@ document.querySelectorAll(
 
 // ── Hero: live generation animation ──────────
 const prompts = [
-  '"Cyberpunk tiger with neon city skyline"',
-  '"Astronaut surfing on Saturn\'s rings"',
-  '"Vintage mandala with lotus flowers"',
-  '"Retro 80s synthwave mountain sunset"',
-  '"Minimalist wolf moon geometric"',
+  '"Neon glowing orb"',
+  '"Planet with rings"',
+  '"Colorful mandala"',
+  '"Synthwave sunset"',
+  '"Wolf moon silhouette"',
 ];
 
 let promptIndex = 0;
