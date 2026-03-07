@@ -94,60 +94,72 @@
             <div class="tshirt-wrap">
               <svg class="tshirt-svg" viewBox="0 0 260 300" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                  <linearGradient id="sg" x1="10%" y1="0%" x2="90%" y2="100%">
-                    <stop offset="0%" stop-color="#232048"/>
-                    <stop offset="100%" stop-color="#0d0b1e"/>
+                  <linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%"   stop-color="#1e1b4b"/>
+                    <stop offset="100%" stop-color="#0f0d1f"/>
                   </linearGradient>
-                  <!-- Left-to-right body shading (darker edges, subtle centre highlight) -->
-                  <linearGradient id="sgHi" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%"   stop-color="rgba(0,0,0,0.22)"/>
-                    <stop offset="28%"  stop-color="rgba(255,255,255,0.05)"/>
-                    <stop offset="72%"  stop-color="rgba(255,255,255,0.02)"/>
-                    <stop offset="100%" stop-color="rgba(0,0,0,0.18)"/>
-                  </linearGradient>
-                  <!-- Left sleeve shadow -->
-                  <linearGradient id="sleevL" x1="100%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%"   stop-color="rgba(0,0,0,0)"/>
-                    <stop offset="100%" stop-color="rgba(0,0,0,0.30)"/>
-                  </linearGradient>
-                  <!-- Right sleeve shadow -->
-                  <linearGradient id="sleevR" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%"   stop-color="rgba(0,0,0,0)"/>
-                    <stop offset="100%" stop-color="rgba(0,0,0,0.22)"/>
+                  <linearGradient id="shade" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%"   stop-color="rgba(0,0,0,0.28)"/>
+                    <stop offset="22%"  stop-color="rgba(0,0,0,0.06)"/>
+                    <stop offset="78%"  stop-color="rgba(0,0,0,0.04)"/>
+                    <stop offset="100%" stop-color="rgba(0,0,0,0.24)"/>
                   </linearGradient>
                 </defs>
 
-                <!-- ── Main shirt silhouette ── -->
-                <!-- Wide shoulders, slight body taper, crew neck -->
-                <path d="M 108,40 L 36,22 L 3,108 L 16,132 L 58,118 L 52,278 L 208,278 L 202,118 L 244,132 L 257,108 L 224,22 L 152,40 Q 130,77 108,40 Z"
-                  fill="url(#sg)" stroke="rgba(255,255,255,0.07)" stroke-width="1.5"/>
+                <!--
+                  Men's round-neck tee — all curves, no straight-line corners.
+                  ViewBox 260×300. Key coords:
+                    Collar:     L(108,26) → neck-bottom(130,52) → R(152,26)
+                    Shoulders:  L(46,22) and R(214,22)
+                    Sleeve tip: L(8,98)  and R(252,98)
+                    Underarm:   L(60,130) and R(200,130)
+                    Hem:        L(54,276) and R(206,276)
+                -->
 
-                <!-- Body shading overlay -->
-                <path d="M 108,40 L 36,22 L 3,108 L 16,132 L 58,118 L 52,278 L 208,278 L 202,118 L 244,132 L 257,108 L 224,22 L 152,40 Q 130,77 108,40 Z"
-                  fill="url(#sgHi)"/>
+                <!-- Main shirt silhouette -->
+                <path d="
+                  M 108,26
+                  C  88,22  50,18  46,22
+                  C  30,30   8,66   8,98
+                  C  10,114  36,124  60,130
+                  C  58,168  54,230  54,276
+                  L 206,276
+                  C 206,230 202,168 200,130
+                  C 224,124 250,114 252,98
+                  C 252,66  230,30  214,22
+                  C 210,18  172,22  152,26
+                  Q 130,52  108,26 Z
+                " fill="url(#sg)" stroke="rgba(255,255,255,0.07)" stroke-width="1.2"/>
 
-                <!-- Left sleeve shadow -->
-                <path d="M 36,22 L 3,108 L 16,132 L 58,118 Z" fill="url(#sleevL)" opacity="0.85"/>
+                <!-- Edge-shading overlay (same path) -->
+                <path d="
+                  M 108,26
+                  C  88,22  50,18  46,22
+                  C  30,30   8,66   8,98
+                  C  10,114  36,124  60,130
+                  C  58,168  54,230  54,276
+                  L 206,276
+                  C 206,230 202,168 200,130
+                  C 224,124 250,114 252,98
+                  C 252,66  230,30  214,22
+                  C 210,18  172,22  152,26
+                  Q 130,52  108,26 Z
+                " fill="url(#shade)"/>
 
-                <!-- Right sleeve shadow -->
-                <path d="M 224,22 L 257,108 L 244,132 L 202,118 Z" fill="url(#sleevR)" opacity="0.85"/>
+                <!-- Collar band (slightly darker filled strip) -->
+                <path d="M 108,26 Q 130,52 152,26 L 148,32 Q 130,46 112,32 Z"
+                  fill="#0c0a1e" stroke="rgba(255,255,255,0.09)" stroke-width="0.8"/>
 
-                <!-- Shoulder seam — left (subtle stitch line) -->
-                <line x1="108" y1="40" x2="58" y2="118" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
-                <!-- Shoulder seam — right -->
-                <line x1="152" y1="40" x2="202" y2="118" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
-
-                <!-- Collar ribbed band -->
-                <path d="M 108,40 Q 130,77 152,40 L 148,47 Q 130,71 112,47 Z"
-                  fill="#0a091c" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
-
-                <!-- Sleeve cuff hem — left -->
-                <path d="M 4,110 L 17,134" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" stroke-linecap="round"/>
-                <!-- Sleeve cuff hem — right -->
-                <path d="M 256,110 L 243,134" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- Sleeve hem — left -->
+                <path d="M 9,100 C 11,116 36,126 60,131"
+                  fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1.4" stroke-linecap="round"/>
+                <!-- Sleeve hem — right -->
+                <path d="M 251,100 C 249,116 224,126 200,131"
+                  fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1.4" stroke-linecap="round"/>
 
                 <!-- Bottom hem -->
-                <line x1="52" y1="275" x2="208" y2="275" stroke="rgba(255,255,255,0.07)" stroke-width="1.5"/>
+                <line x1="54" y1="274" x2="206" y2="274"
+                  stroke="rgba(255,255,255,0.07)" stroke-width="1.2"/>
               </svg>
 
               <!-- Design print area, positioned over shirt chest -->
