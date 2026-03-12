@@ -320,14 +320,14 @@ p  { color: var(--clr-muted); line-height: 1.7; }
   filter: drop-shadow(0 12px 32px rgba(0,0,0,0.55));
 }
 
-/* Print area — percentages of SVG viewBox 260×290
-   Design rect: x=84–176 (92px), y=76–196 (120px) */
+/* Print area — percentages of SVG viewBox 260×300
+   Design rect: x≈85–175 (90px), y≈65–195 (130px) */
 .print-area {
   position: absolute;
-  left:   32.3%;
-  top:    26.2%;
-  width:  35.4%;
-  height: 41.4%;
+  left:   32.7%;
+  top:    21.7%;
+  width:  34.6%;
+  height: 43.3%;
   border-radius: 3px;
   overflow: hidden;
 }
